@@ -1,4 +1,4 @@
-🌐 AWS VPC Peering Project
+                                                               🌐 AWS VPC Peering Project
 📌 Project Overview
 This project demonstrates the implementation of VPC Peering in Amazon Web Services (AWS) to enable secure and private communication between two Virtual Private Clouds (VPCs) within the same region. The setup ensures that resources in different VPCs can communicate using private IP addresses without traversing the public internet.
 
