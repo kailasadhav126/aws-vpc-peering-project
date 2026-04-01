@@ -12,6 +12,7 @@ The primary objective of this project is to: <br>
 🏗 Architecture:- <br>
 
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/f5f4ad3154588e00ef143c558f513198220ced58/images/Architectureof%20vpc%20peering.png) <br>
+
 The architecture consists of: <br>
 1) Two VPCs with non-overlapping CIDR blocks <br>
 2) Public subnets in each VPC <br>
@@ -21,6 +22,7 @@ The architecture consists of: <br>
 6) EC2 instances deployed in each subnet  <br>
 
  //NOTE--> i have demostrated vpc in one single region ,  i can also implement in  diffn region across in one account, aslo implement in 2 different accounts// <br>
+ 
  ⚙️ Implementation Details <br>
 1. VPC Configuration <br>
 Created two VPCs: <br>
@@ -35,6 +37,7 @@ Attached Internet Gateways to both VPCs <br>
 Enabled internet access for public subnets <br>
 
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/igw_setup.png) <br>
+
 3. Subnet Configuration <br>
 Created one public subnet in each VPC: <br>
 VPC1: 10.0.1.0/24 <br>
@@ -45,19 +48,23 @@ VPC2: 192.168.1.0/24 <br>
 4.Route Table Configuration <br>
 Configured routes for internet access (0.0.0.0/0 → IGW) <br>
 Added routes for VPC Peering: <br>
-VPC1 → 20.0.0.0/16 via Peering <br>
+VPC1 → 192.168.0.0/16 via Peering <br>
 VPC2 → 10.0.0.0/16 via Peering <br> 
 
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/Route_table.png) <br> 
 
-VPC1 → 20.0.0.0/16 via Peering <br>
+VPC1 → 192.168.0.0/16 via Peering <br>
+
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/Route_table_1%20configuration.png) <br> 
-VPC1 → 20.0.0.0/16 via Peering <br>
+
+VPC1 → 10.0.0.0/16 via Peering <br>
+
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/Route_table2_configuration.png) <br>
 
 5.VPC Peering Setup <br>
 Established a peering connection between VPC1 and VPC2 <br>
 Accepted and activated the connection <br>
+
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/vpc_peering_setup.png) <br>
 
 6. EC2 Deployment <br>
@@ -77,6 +84,7 @@ for instance_1  <br>
 SSH (Port 22) <br>
 ICMP (Ping testing) <br>
 for instance_2 <br>
+
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/SG_2%20CONFIGURATION.png) <br>
 
 8. Connectivity Testing <br>
