@@ -50,8 +50,9 @@ VPC2 → 10.0.0.0/16 via Peering <br>
 
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/Route_table.png) <br> 
 
+VPC1 → 20.0.0.0/16 via Peering <br>
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/Route_table_1%20configuration.png) <br> 
-
+VPC1 → 20.0.0.0/16 via Peering <br>
 ![image alt](https://github.com/kailasadhav126/aws-vpc-peering-project/blob/47bb1c9559c5dfd38e587dffc658916bade881eb/images/Route_table2_configuration.png) <br>
 
 5.VPC Peering Setup <br>
