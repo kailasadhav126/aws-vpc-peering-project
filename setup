@@ -1,0 +1,41 @@
+
+⚙️ Step-by-Step: Create VPC Peering
+🟢 Step 1: Create Two VPCs
+
+Example:
+
+VPC-A → 10.0.0.0/16
+VPC-B → 192.168.0.0/16
+
+⚠️ Important:
+👉 CIDR blocks must NOT overlap
+
+🟢 Step 2: Create Peering Connection
+Go to AWS Console → VPC
+Click → Peering Connections
+Click → Create Peering
+
+Fill details:
+
+Requester VPC → VPC-A
+Accepter VPC → VPC-B
+🟢 Step 3: Accept Peering
+Go to Peering → Accept request
+🟢 Step 4: Update Route Tables (MOST IMPORTANT 🔥)
+In VPC-A Route Table:
+Destination: 192.168.0.0/16
+Target: VPC Peering Connection
+In VPC-B Route Table:
+Destination: 10.0.0.0/16
+Target: VPC Peering Connection
+
+👉 Without this → ❌ Communication will NOT work
+
+🟢 Step 5: Update Security Groups
+
+Allow traffic:
+
+From other VPC CIDR
+Example:
+Type: All traffic
+Source: 192.168.0.0/16
